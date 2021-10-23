@@ -16,7 +16,7 @@ export default function Pokemon() {
       skip: router.isFallback,
     }
   );
-  const { isLoading, error, data } = result;
+  const { isFetching, isLoading, error, data, refetch } = result;
 
   return (
     <div>
@@ -29,10 +29,18 @@ export default function Pokemon() {
         ) : router.isFallback || isLoading ? (
           <>Loading...</>
         ) : data ? (
-          <>
+          <div
+            style={{
+              display: "flex",
+              width: 200,
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
             <h3>{data.species.name}</h3>
             <img src={data.sprites.front_shiny} alt={data.species.name} />
-          </>
+            <button onClick={refetch}>{isFetching ? "..." : "Refetch"}</button>
+          </div>
         ) : null}
       </article>
     </div>
