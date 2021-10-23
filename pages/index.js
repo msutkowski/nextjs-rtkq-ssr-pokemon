@@ -1,21 +1,29 @@
-import Head from 'next/head'
+import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>RTKQuery - NextJS - Pokemon SSR!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h1 className="title">Time to browse the pokemons</h1>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <ul>
+          <li>
+            Bulbasaur <Link href="/pokemon/bulbasaur">dynamic</Link>{" "}
+            <Link href="/pokemon/ssr/bulbasaur">SSR</Link>{" "}
+            <Link href="/pokemon/ssg/bulbasaur">SSG</Link>
+          </li>
+          <li>
+            Beedrill <Link href="/pokemon/beedrill">dynamic</Link>{" "}
+            <Link href="/pokemon/ssr/beedrill">SSR</Link>{" "}
+            <Link href="/pokemon/ssg/beedrill"> fallback SSG</Link>
+          </li>
+        </ul>
 
         <div className="grid">
           <a href="https://nextjs.org/docs" className="card">
@@ -47,17 +55,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
 
       <style jsx>{`
         .container {
@@ -205,5 +202,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
