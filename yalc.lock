@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@reduxjs/toolkit": {
+      "signature": "845b0b96724683eb3557a8c9c5b20b10",
+      "file": true
+    }
+  }
+}
