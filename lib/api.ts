@@ -22,6 +22,7 @@ export const api = createApi({
       query: () => `pokemon/`,
     }),
   }),
+  keepUnusedDataFor: 5,
 });
 
 // Export hooks for usage in functional components
